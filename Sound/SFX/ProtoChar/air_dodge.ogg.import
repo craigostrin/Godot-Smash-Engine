@@ -6,7 +6,8 @@ path="res://.import/air_dodge.ogg-5abe7e797d6230c80edc7f6276ec820d.oggstr"
 
 [deps]
 
-source_md5="7852d8c2deb28a63a5b6d144724b0d8a"
+source_file="res://Sound/SFX/ProtoChar/air_dodge.ogg"
+dest_files=[ "res://.import/air_dodge.ogg-5abe7e797d6230c80edc7f6276ec820d.oggstr" ]
 
 [params]
 

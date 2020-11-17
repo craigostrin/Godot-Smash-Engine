@@ -6,7 +6,8 @@ path="res://.import/ledge.wav-c4ed3382cc7c269f9feb57fe2ad66926.sample"
 
 [deps]
 
-source_md5="ad5b05a54bbc40a8b596105baa6ee44f"
+source_file="res://Sound/SFX/ProtoChar/ledge.wav"
+dest_files=[ "res://.import/ledge.wav-c4ed3382cc7c269f9feb57fe2ad66926.sample" ]
 
 [params]
 

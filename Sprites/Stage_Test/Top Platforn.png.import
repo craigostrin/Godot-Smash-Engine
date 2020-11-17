@@ -3,16 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Top Platforn.png-373968b5ef0895fc17e2a13ee92bc83f.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_md5="4733cdb4010143da5f1879950396bc77"
+source_file="res://Sprites/Stage_Test/Top Platforn.png"
+dest_files=[ "res://.import/Top Platforn.png-373968b5ef0895fc17e2a13ee92bc83f.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -22,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

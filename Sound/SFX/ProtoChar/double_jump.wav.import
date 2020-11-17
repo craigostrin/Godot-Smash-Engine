@@ -6,7 +6,8 @@ path="res://.import/double_jump.wav-39a2572f6773a9989886481dd70d98ea.sample"
 
 [deps]
 
-source_md5="e2b7f7e5aed9ab16084f1af0eac3ef14"
+source_file="res://Sound/SFX/ProtoChar/double_jump.wav"
+dest_files=[ "res://.import/double_jump.wav-39a2572f6773a9989886481dd70d98ea.sample" ]
 
 [params]
 

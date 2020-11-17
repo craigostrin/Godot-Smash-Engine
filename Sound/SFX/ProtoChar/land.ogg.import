@@ -6,7 +6,8 @@ path="res://.import/land.ogg-da2841e8e307741fb1fbdb3369d62932.oggstr"
 
 [deps]
 
-source_md5="cfd3b8af38240abc15612b4aca7310f5"
+source_file="res://Sound/SFX/ProtoChar/land.ogg"
+dest_files=[ "res://.import/land.ogg-da2841e8e307741fb1fbdb3369d62932.oggstr" ]
 
 [params]
 

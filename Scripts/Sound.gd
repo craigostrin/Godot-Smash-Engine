@@ -75,7 +75,7 @@ class SoundChannel:
 	
 	func _init(_is_positional, _tween, _layer_func):
 		""" We have to know whether it's positional or not at init as that creates the required node.
-		    We also have to be given a Tween node for crossfades. This can be shared between all of them!
+			We also have to be given a Tween node for crossfades. This can be shared between all of them!
 		"""
 		is_positional = _is_positional
 		if _is_positional:
@@ -101,7 +101,7 @@ class SoundChannel:
 	
 	func crossfade(_crosstype):
 		""" Fades the given channel in or out using the tween child.
-		    If it's fading out, it will also silence the channel once it has finished.
+			If it's fading out, it will also silence the channel once it has finished.
 		"""
 		# Remove silencing tween, since any sort of crossfade means that that has to be readjusted.
 		tween.remove(self, "silence")
@@ -111,7 +111,7 @@ class SoundChannel:
 		
 		match _crosstype:
 			# Fade in the song
-			CROSSFADE_IN:
+			crossfadeTypes.CROSSFADE_IN:
 				# If there is a crossfade duration, start tweening the current volume towards 1.0.
 				duration *= (1.0 - crossfade_volume)
 				if duration != 0:
@@ -126,7 +126,7 @@ class SoundChannel:
 					is_active = true
 			
 			# Fade out the song
-			CROSSFADE_OUT:
+			crossfadeTypes.CROSSFADE_OUT:
 				# If there is a crossfade duration, start tweening the current crossfade volume towards 0.0.
 				duration *= crossfade_volume
 				if duration != 0:
@@ -138,7 +138,7 @@ class SoundChannel:
 	
 	func set_active_on_layer(_layer):
 		""" Sets the channel as the dominant one on the given layer and fades out the currently active channel if there was one.
-		    Returns true if it muted another channel and false if it did not mute anything.
+			Returns true if it muted another channel and false if it did not mute anything.
 		"""
 		var result = false
 		var layers = layer_func.call_func()
@@ -149,7 +149,7 @@ class SoundChannel:
 				return result
 			# If it's a different channel, fade the old one out or make it stop and return the desired one to normal volume
 			else:
-				layers[_layer].crossfade(CROSSFADE_OUT)
+				layers[_layer].crossfade(crossfadeTypes.CROSSFADE_OUT)
 				result = true
 		
 		layers[_layer] = self
@@ -173,7 +173,7 @@ class SoundChannel:
 	
 	func get_multiplied_volume(_volume_mult):
 		""" Returns a volume based on the DEFAULT_VOLUME multiplied by _volume_mult.
-		    Since DEFAULT_VOLUME can be 0 or negative, this needs to take into account MUTE_VOLUME.
+			Since DEFAULT_VOLUME can be 0 or negative, this needs to take into account MUTE_VOLUME.
 		"""
 		return MUTE_VOLUME + (abs(DEFAULT_VOLUME - MUTE_VOLUME) * _volume_mult)
 	
@@ -214,45 +214,45 @@ func _process(delta):
 
 func playsfx(_track_name, _volume_mult = 1.5, _positional = false, _let_finish = false, _random_pitch = null, _bus = "Master"):
 	""" play() alias with simplified parameters for SFX playback. Never uses a layer.
-	    You can absolutely play sound effects using play() itself, this is merely a helper.
-	      string _track_name: The name of the track to play. Loads .wav and .ogg files from the AUDIO_DIR directory.
-	      float _volume_mult: The volume for this track, between 0 and 1.
-	      Node _positional: If anything other than false, a 2D player will be used. If it should be 2D, pass the node or a path to the node that should be tracked.
-	      bool _let_finish: If this is true, the given track cannot be played/updated unless there are no others of its type playing.
-	      float _random_pitch: If this is anything other than null, the sound effect will have its pitch changed randomly by that amount.
-	      string _bus: The audio bus to play the track back on. Different mastering effects!
+		You can absolutely play sound effects using play() itself, this is merely a helper.
+		  string _track_name: The name of the track to play. Loads .wav and .ogg files from the AUDIO_DIR directory.
+		  float _volume_mult: The volume for this track, between 0 and 1.
+		  Node _positional: If anything other than false, a 2D player will be used. If it should be 2D, pass the node or a path to the node that should be tracked.
+		  bool _let_finish: If this is true, the given track cannot be played/updated unless there are no others of its type playing.
+		  float _random_pitch: If this is anything other than null, the sound effect will have its pitch changed randomly by that amount.
+		  string _bus: The audio bus to play the track back on. Different mastering effects!
 	"""
 	return play(_track_name, _volume_mult, _positional, true, _let_finish, _random_pitch, _bus, false, null, 0.0, false, 0)
 
 func playmusic(_track_name, _layer = "main", _volume_mult = 1.0, _positional = false, _crossfade_duration = 0.0, _copy_time = false, _bus = "Master"):
 	""" play() alias with simplified parameters for music playback. Always uses a layer.
-	    You can absolutely play music tracks using play() itself, this is merely a helper.
-	      string _track_name: The name of the track to play. Loads .wav and .ogg files from the AUDIO_DIR directory.
-	      float _volume_mult: The volume for this track, between 0 and 1.
-	      Node _positional: If anything other than false, a 2D player will be used. If it should be 2D, pass the node or a path to the node that should be tracked.
-	      int _layer: Determines which songs to shut off when it begins playing, namely all currently playing songs on its own layer.
-	      bool _crossfade_duration: How long the song takes to finish kicking in. 0.0 means instantly and is default.
-	      bool _copy_time: If true, the song will copy the time of the song currently playing on its layer and play from there.
-	      string _bus: The audio bus to play the track back on. Different mastering effects!
+		You can absolutely play music tracks using play() itself, this is merely a helper.
+		  string _track_name: The name of the track to play. Loads .wav and .ogg files from the AUDIO_DIR directory.
+		  float _volume_mult: The volume for this track, between 0 and 1.
+		  Node _positional: If anything other than false, a 2D player will be used. If it should be 2D, pass the node or a path to the node that should be tracked.
+		  int _layer: Determines which songs to shut off when it begins playing, namely all currently playing songs on its own layer.
+		  bool _crossfade_duration: How long the song takes to finish kicking in. 0.0 means instantly and is default.
+		  bool _copy_time: If true, the song will copy the time of the song currently playing on its layer and play from there.
+		  string _bus: The audio bus to play the track back on. Different mastering effects!
 	"""
 	return play(_track_name, _volume_mult, _positional, false, false, null, _bus, true, _layer, _crossfade_duration, _copy_time, 1)
 
 func play(_track_name, _volume_mult = 1.0, _positional = false, _is_sfx = true, _let_finish = false, _random_pitch = null, _bus = "Master", _uses_layer = false, _layer = "main", _crossfade_duration = 0.0, _copy_time = false, _loop = 0):
 	""" Play a track of the given name. Finding a channel is done automatically.
-	      string _track_name: The name of the track to play. Loads .wav and .ogg files from the AUDIO_DIR directory.
-	      float _volume_mult: The volume for this track, between 0 and 1.
-	      bool _is_sfx: If true, the song will be affected by global SFX volume changes, else it will be affected by global music volume changes.
-	      Node _positional: If anything other than false, a 2D player will be used. If it should be 2D, pass the node or a path to the node that should be tracked.
-	      bool _let_finish: If this is true, the given track cannot be played/updated unless there are no others of its type playing.
-	      float _random_pitch: If this is anything other than null, the sound effect will have its pitch changed randomly by that amount.
-	      string _bus: The audio bus to play the track back on. Different mastering effects!
-	      bool _uses_layer: If this is true, the song will shut off all other songs playing on its given layer.
-	                    Sound effects don't want to be unique. Subsequent parameters are only used if _uses_layer is true.
-	        int _layer: Determines which songs to shut off when it begins playing, namely all currently playing songs on its own layer.
-	        bool _crossfade_duration: How long the song takes to finish kicking in. 0 means instantly and is default.
-	        bool _copy_time: If true, the song will copy the time of the song currently playing on its layer and play from there.
+		  string _track_name: The name of the track to play. Loads .wav and .ogg files from the AUDIO_DIR directory.
+		  float _volume_mult: The volume for this track, between 0 and 1.
+		  bool _is_sfx: If true, the song will be affected by global SFX volume changes, else it will be affected by global music volume changes.
+		  Node _positional: If anything other than false, a 2D player will be used. If it should be 2D, pass the node or a path to the node that should be tracked.
+		  bool _let_finish: If this is true, the given track cannot be played/updated unless there are no others of its type playing.
+		  float _random_pitch: If this is anything other than null, the sound effect will have its pitch changed randomly by that amount.
+		  string _bus: The audio bus to play the track back on. Different mastering effects!
+		  bool _uses_layer: If this is true, the song will shut off all other songs playing on its given layer.
+						Sound effects don't want to be unique. Subsequent parameters are only used if _uses_layer is true.
+			int _layer: Determines which songs to shut off when it begins playing, namely all currently playing songs on its own layer.
+			bool _crossfade_duration: How long the song takes to finish kicking in. 0 means instantly and is default.
+			bool _copy_time: If true, the song will copy the time of the song currently playing on its layer and play from there.
 	
-	    Returns the channel that the track is playing on, for whatever use that may have.
+		Returns the channel that the track is playing on, for whatever use that may have.
 	"""
 	
 	# Is set to true whenever we shut down another player in this function
@@ -272,7 +272,7 @@ func play(_track_name, _volume_mult = 1.0, _positional = false, _is_sfx = true, 
 			# since we had to have been fading out to be active while not being active.
 			faded = existing_channel.set_active_on_layer(_layer)
 			if faded:
-				existing_channel.crossfade(CROSSFADE_IN)
+				existing_channel.crossfade(crossfadeTypes.CROSSFADE_IN)
 			return existing_channel
 	
 	# Set up positional tracking
@@ -348,7 +348,7 @@ func play(_track_name, _volume_mult = 1.0, _positional = false, _is_sfx = true, 
 	# Start playing the track. If we faded out another track, start this one's volume at 0 as well.
 	if faded:
 		channel.set_crossfade_volume(0)
-	channel.crossfade(CROSSFADE_IN)
+	channel.crossfade(crossfadeTypes.CROSSFADE_IN)
 	
 	if faded and playback_position != 0:
 		channel.player.seek(playback_position)
@@ -393,7 +393,7 @@ func set_mute(_muted = true):
 
 func autopsy(_active_only = false):
 	""" Prints out a complete set of information about all players.
-	    If _active_only is true, only active ones are displayed.
+		If _active_only is true, only active ones are displayed.
 	"""
 	# Print global info.
 	print("----------------------")
@@ -416,8 +416,8 @@ func autopsy(_active_only = false):
 
 func get_idle_channel(_positional = false, _preferred_track = null):
 	""" Returns a channel ID for a player that is not busy right now and the right player type (2D or not).
-	    Will prefer to use one that already has the given track loaded.
-	    Creates a new one if none is idle.
+		Will prefer to use one that already has the given track loaded.
+		Creates a new one if none is idle.
 	"""
 	var preferred_channel = false
 	var empty_channel = false
@@ -444,7 +444,7 @@ func get_idle_channel(_positional = false, _preferred_track = null):
 
 func add_channel(_positional = false):
 	""" Creates a new SoundChannel and returns a reference to it.
-	    Takes whether it should be a positional AudioStreamPlayer2D or not as an argument, default false.
+		Takes whether it should be a positional AudioStreamPlayer2D or not as an argument, default false.
 	"""
 	var new_channel = SoundChannel.new(_positional, tween, funcref(self, "get_current_layers"))
 	add_child(new_channel.player)
@@ -455,7 +455,7 @@ func add_channel(_positional = false):
 
 func find_channel_playing_track(_track_name):
 	""" Returns the first found SoundChannel object playing the given track.
-	    If none, returns false.
+		If none, returns false.
 	"""
 	for channel in music_channels:
 		if channel.is_active and channel.track_name == _track_name:
@@ -476,6 +476,6 @@ func filter_idle_channels():
 
 static func get_multiplied_volume(_volume_mult):
 	""" Returns a volume based on the DEFAULT_VOLUME multiplied by _volume_mult.
-	    Since DEFAULT_VOLUME can be 0 or negative, this needs to take into account MUTE_VOLUME.
+		Since DEFAULT_VOLUME can be 0 or negative, this needs to take into account MUTE_VOLUME.
 	"""
 	return MUTE_VOLUME + (abs(DEFAULT_VOLUME - MUTE_VOLUME) * _volume_mult)

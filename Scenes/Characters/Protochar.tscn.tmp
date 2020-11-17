@@ -1,0 +1,270 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/Characters/ProtoChar/ProtoChar.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Characters/hitbox_maker.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/ProtoChar/ProtoChar_Frames.tres" type="SpriteFrames" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3.44666, -6.95128 )
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.1901, 24.8004 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.0141, 20.106 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.1734, 16.4621 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 21.6542 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 12.8234, 17.8466 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 17.7477 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 11.1762, 16.4908 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 680, 340 )
+scale = Vector2( 1.59543, 1.59543 )
+input_pickable = true
+collision_mask = 6
+collision/safe_margin = 0.1
+script = ExtResource( 1 )
+
+[node name="hitbox_maker" type="Path2D" parent="."]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+width = 15
+height = 10
+damage = 20
+angle = 270
+base_kb = 0
+kb_scaling = 20
+duration = 15
+type = "fire"
+id = 1
+hitlag_modifier = 1
+Export_Code = "Export"
+code = "create_hitbox(15,10,20,270,0,20,15,'fire',str(1),[Vector2(3.446655, -6.951279)],1)"
+
+[node name="Sprite_Node" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.133809, 0.133809 )
+frames = ExtResource( 3 )
+animation = "dair"
+frame = 1
+playing = true
+
+[node name="stand_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="air_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 4.74435 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="landing_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.30716 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="crouch_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.30716 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="jump_squat_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.30716 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="short_hop_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5.43831 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="full_hop_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5.43831 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="air_dodge_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 4.74435 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="air_dodge_collision3" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="air_dodge_collision2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 3.2301, -3.26349 )
+shape = SubResource( 6 )
+disabled = true
+
+[node name="free_fall_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 3.6539 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="free_fall_collision2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -2.27457 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="run_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.28174 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="dash_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.28174 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="nair_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.28174 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="uair_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.28174 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="bair_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.28174 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="dair_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.28174 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="fair_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 8.28174 )
+shape = SubResource( 8 )
+disabled = true
+
+[node name="skid_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="ledge_catch_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="ledge_hold_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="ledge_climb_fast_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="ledge_roll_fast_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="ledge_jump_fast_collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+disabled = true
+
+[node name="wall_jump_left_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5.43831 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="wall_jump_right_collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -5.43831 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="Type" type="Label" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Player"
+
+[node name="Ground_RayL" type="RayCast2D" parent="."]
+position = Vector2( -10, 25 )
+enabled = true
+cast_to = Vector2( 0, 4 )
+collision_mask = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground_RayR" type="RayCast2D" parent="."]
+position = Vector2( 10, 24.7528 )
+enabled = true
+cast_to = Vector2( 0, 4 )
+collision_mask = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Wall_Jump_RayB" type="RayCast2D" parent="."]
+visible = false
+enabled = true
+cast_to = Vector2( -13, 0 )
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Wall_Jump_RayF" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 13, 0 )
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ledge_Grab_RayF" type="RayCast2D" parent="."]
+modulate = Color( 0.667969, 0, 0, 1 )
+position = Vector2( 0, -25.0118 )
+enabled = true
+cast_to = Vector2( 22, 0 )
+collision_mask = 8
+__meta__ = {
+"_edit_lock_": true
+}

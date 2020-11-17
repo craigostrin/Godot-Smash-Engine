@@ -6,7 +6,8 @@ path="res://.import/air_dodge.wav-01f7bb6444ad287348b2d62032572287.sample"
 
 [deps]
 
-source_md5="17e3fc73f6e7eb54b24db00ba568d9bc"
+source_file="res://Sound/SFX/ProtoChar/air_dodge.wav"
+dest_files=[ "res://.import/air_dodge.wav-01f7bb6444ad287348b2d62032572287.sample" ]
 
 [params]
 

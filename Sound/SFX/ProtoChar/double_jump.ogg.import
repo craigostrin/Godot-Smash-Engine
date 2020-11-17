@@ -6,7 +6,8 @@ path="res://.import/double_jump.ogg-8947fd44368363bdc8721aecabc48668.oggstr"
 
 [deps]
 
-source_md5="5111f954164ec38b5d576d18c967d4c1"
+source_file="res://Sound/SFX/ProtoChar/double_jump.ogg"
+dest_files=[ "res://.import/double_jump.ogg-8947fd44368363bdc8721aecabc48668.oggstr" ]
 
 [params]
 

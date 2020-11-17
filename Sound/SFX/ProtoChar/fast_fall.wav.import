@@ -6,7 +6,8 @@ path="res://.import/fast_fall.wav-c8520da7515721db6d13124bb981361a.sample"
 
 [deps]
 
-source_md5="d4ce8bd2094611765776ef37f71cda78"
+source_file="res://Sound/SFX/ProtoChar/fast_fall.wav"
+dest_files=[ "res://.import/fast_fall.wav-c8520da7515721db6d13124bb981361a.sample" ]
 
 [params]
 

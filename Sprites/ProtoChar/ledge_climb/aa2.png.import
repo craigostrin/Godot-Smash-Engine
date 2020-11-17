@@ -3,16 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/aa2.png-e5a52152ef8a2c89fadc030c4ef9294e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_md5="1cd40b3e5019ff02bb193f1f0811cf8f"
+source_file="res://Sprites/ProtoChar/ledge_climb/aa2.png"
+dest_files=[ "res://.import/aa2.png-e5a52152ef8a2c89fadc030c4ef9294e.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -22,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

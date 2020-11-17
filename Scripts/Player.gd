@@ -277,7 +277,7 @@ func down_buffer():
 		
 #Check if all of the states in the array match the current state. Return false in that case, true otherwise.
 func state_exception(state_array):
-	var each_state
+	#var each_state
 	for each_state in state_array:
 		if state == each_state:
 			return false
@@ -285,7 +285,7 @@ func state_exception(state_array):
 
 #Check if any of the states in the array match the current state. Returns true in that case, false otherwise.
 func state_includes(state_array):
-	var each_state
+	#var each_state
 	for each_state in state_array:
 		if state == each_state:
 			return true

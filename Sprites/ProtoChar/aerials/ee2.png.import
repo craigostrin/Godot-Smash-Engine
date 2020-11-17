@@ -3,16 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/ee2.png-c5a57d44dc3798adaa49ac61eab01b22.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_md5="377269575f7cd44dd1a31bf328320382"
+source_file="res://Sprites/ProtoChar/aerials/ee2.png"
+dest_files=[ "res://.import/ee2.png-c5a57d44dc3798adaa49ac61eab01b22.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -22,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

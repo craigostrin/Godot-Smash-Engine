@@ -3,16 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/dair (2).png-62f0903a9d9dc2f0539b875ea045ad5f.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_md5="d525180212bcf5cdba31552c25dab4dc"
+source_file="res://Sprites/ProtoChar/aerials/dair (2).png"
+dest_files=[ "res://.import/dair (2).png-62f0903a9d9dc2f0539b875ea045ad5f.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -22,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
