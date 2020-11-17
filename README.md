@@ -1,6 +1,6 @@
 # Godot-Smash-Engine
 Open Source SSB Engine
-This was forked from NyxTheShield's project and updated to the current version of Godot (as of this writing Godot 3.2)
+This was forked from NyxTheShield's project and updated to the current version of Godot (as of this writing Godot 3.2.4)
 
 Things that work:
 Dashing,
@@ -34,6 +34,8 @@ Reorganize state stuff so that its not just a bunch of constants, while still ma
 Add Rollback (Godot GGPO)
   - I want to use this repo https://github.com/FlutterTal/godot_ggpo
   - That project is still being worked on, but if we can get that working in Godot, I'd like to port this project into GGPO
+  - If that doesn't work, then we'll have to mess around with using WebRTC and building an original version of rollback
+  - That would also require porting this project to the web.
   
 Switch from hardcorded animation player to Godot's built in AnimationPlayer
   - This should make editing animations for hitboxes and sprites much MUCH easier
