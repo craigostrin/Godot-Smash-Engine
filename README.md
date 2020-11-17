@@ -21,11 +21,13 @@ RoA Wavedash (Air Dodge on Jump Squat)
 Pivot Ledgedrop
 
 Things still left to do:
+
 Make attacks do damage
   - add knockback
   - add hitstun
   - add armor
   - add i-frames
+
 Reorganize state stuff so that its not just a bunch of constants, while still making the state machine easily modable and generic.
   - current plan is to maybe put all of the states into a giant dictionary, or just use a mutable enum. /shrug
 Add Rollback (Godot GGPO)
