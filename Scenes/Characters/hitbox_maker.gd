@@ -25,7 +25,7 @@ func _process(delta):
 	# Update game logic here.
 	pass
 
-func make_hitbox(value):
+func make_hitbox(value): #this used to be update(value)
 	if Engine.is_editor_hint():
 		Export_Code = value
 		
