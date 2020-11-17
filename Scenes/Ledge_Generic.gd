@@ -1,3 +1,3 @@
 extends Area2D
 
-var is_grabbed = false
+var is_grabbed : bool = false

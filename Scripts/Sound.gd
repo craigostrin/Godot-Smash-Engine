@@ -16,19 +16,19 @@ extends Node
 # The directory that holds the audio files.
 const AUDIO_DIR = "res://Sound/"
 # Maximum distance you can still hear AudioStreamPlayer2Ds from. 2000 is default.
-const MAX_DISTANCE = 2000
+const MAX_DISTANCE : int = 2000
 # Default volume attenuation in decibels (0 means no change).
-const DEFAULT_VOLUME = 0
+const DEFAULT_VOLUME : int = 0
 # Volume attenuation in deibels at which there is no sound.
-const MUTE_VOLUME = -80
+const MUTE_VOLUME : int = -80
 
 # Current global volume multipliers.
-var master_volume_mult = 1.0
-var sfx_volume_mult = 1.0
-var music_volume_mult = 1.0
+var master_volume_mult : float = 1.0
+var sfx_volume_mult : float = 1.0
+var music_volume_mult : float = 1.0
 
 # The ID of the Master bus, for muting.
-var master_bus_id = 1
+var master_bus_id : int = 1
 
 # Types of fades, fading in and fading out.
 enum crossfadeTypes {CROSSFADE_IN = 0, CROSSFADE_OUT = 1}
@@ -40,7 +40,7 @@ var music_channels = []
 var active_on_layer = {}
 
 # Tween node to animate the volume for crossfades.
-var tween = Tween.new()
+var tween : Tween = Tween.new()
 
 class SoundChannel:
 	# The audio node this wraps around.

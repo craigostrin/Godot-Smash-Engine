@@ -13,13 +13,13 @@ extends Control
 
 # Constants
 const INPUT_ACTIONS = [ "ui_up", "ui_down", "ui_left", "ui_right", "jump", 'shield', 'attack', 'special', 'grab', 'cstick_up','cstick_down','cstick_left','cstick_right' ]
-const CONFIG_FILE = "res://input.cfg"
+const CONFIG_FILE : String = "res://input.cfg"
 
 # Member variables
 var action # To register the action the UI is currently handling
 var button # Button node corresponding to the above action
-var deadzone = 0.3
-var deadzone_flag = false
+var deadzone : float = 0.3
+var deadzone_flag : bool = false
 # Load/save input mapping to a config file
 # Changes done while testing the demo will be persistent, saved to CONFIG_FILE
 

@@ -1,18 +1,18 @@
 extends Area2D
 
-var width = 500
-var height = 50
-var damage = 50
-var angle = 90
-var base_kb = 100
-var kb_scaling  = 2
-var duration = 1500
-var hitlag_modifier = 1
+var width : int = 500
+var height : int = 50
+var damage : int = 50
+var angle : int = 90
+var base_kb : int = 100
+var kb_scaling : int  = 2
+var duration : int = 1500
+var hitlag_modifier : int = 1
 var type  = 'normal'
 onready var hitbox = get_node('hitbox_collision')
 onready var path = Path2D.new().get_curve()
-var timer  = 0.0
-var id = 'test_group'
+var timer : float  = 0.0
+var id : String = 'test_group'
 var player_list = []
 var points = []
 

@@ -46,39 +46,39 @@ extends KinematicBody2D
 
 #Defining Constants
 #Stage
-const WALL = 'Wall'
-const FLOOR = 'Floor'
-const PLATFORM = 'Platform'
+const WALL : String = 'Wall'
+const FLOOR : String = 'Floor'
+const PLATFORM : String = 'Platform'
 
 #States
-const STAND = 'stand'
-const DASH= 'dash'
-const RUN= 'run'
-const CROUCH= 'crouch'
-const LANDING= 'landing'
-const JUMP_SQUAT= 'jump_squat'
-const SHORT_HOP= 'short_hop'
-const FULL_HOP= 'full_hop'
-const SKID= 'skid'
-const AIR= 'air'
-const AIR_DODGE= 'air_dodge'
-const FREE_FALL= 'free_fall'
-const WALLJUMPLEFT= 'wall_jump_left'
-const WALLJUMPRIGHT= 'wall_jump_right'
-const LEDGE_CATCH= 'ledge_catch'
-const LEDGE_HOLD = 'ledge_hold'
-const LEDGE_ROLL_FAST = 'ledge_roll_fast'
-const LEDGE_CLIMB_FAST = 'ledge_climb_fast'
-const LEDGE_JUMP_FAST = 'ledge_jump_fast'
-const LEDGE_ROLL_SLOW = 'ledge_climb_slow'
-const LEDGE_CLIMB_SLOW = 'ledge_climb_slow'
-const LEDGE_JUMP_SLOW = 'ledge_jump_slow'
-const NAIR = 'nair'
-const FAIR = 'fair'
-const UAIR = 'uair'
-const BAIR =  'bair'
-const DAIR =  'dair'
-const TUMBLE =  'tumble'
+const STAND : String = 'stand'
+const DASH : String = 'dash'
+const RUN : String = 'run'
+const CROUCH : String = 'crouch'
+const LANDING : String = 'landing'
+const JUMP_SQUAT : String = 'jump_squat'
+const SHORT_HOP : String = 'short_hop'
+const FULL_HOP : String = 'full_hop'
+const SKID : String = 'skid'
+const AIR : String = 'air'
+const AIR_DODGE : String = 'air_dodge'
+const FREE_FALL : String = 'free_fall'
+const WALLJUMPLEFT : String = 'wall_jump_left'
+const WALLJUMPRIGHT : String = 'wall_jump_right'
+const LEDGE_CATCH : String = 'ledge_catch'
+const LEDGE_HOLD : String = 'ledge_hold'
+const LEDGE_ROLL_FAST : String = 'ledge_roll_fast'
+const LEDGE_CLIMB_FAST : String = 'ledge_climb_fast'
+const LEDGE_JUMP_FAST : String = 'ledge_jump_fast'
+const LEDGE_ROLL_SLOW : String = 'ledge_climb_slow'
+const LEDGE_CLIMB_SLOW : String = 'ledge_climb_slow'
+const LEDGE_JUMP_SLOW : String = 'ledge_jump_slow'
+const NAIR : String = 'nair'
+const FAIR : String = 'fair'
+const UAIR : String = 'uair'
+const BAIR : String =  'bair'
+const DAIR : String =  'dair'
+const TUMBLE : String =  'tumble'
 
 #Controls
 var up = ''
@@ -107,46 +107,46 @@ onready var audio = get_node('/root/Audio_Manager')
 onready var last_ledge = false
 
 #Global Vars
-var char_name = 'Test'
+var char_name : String = 'Test'
 var state = AIR
-var velocity = Vector2(0,0)
-var run_speed = 400
-var dash_speed = 480
-var max_air_speed = 250
-var fall_speed = 40
-var max_fall_speed = 900
-var air_accel = 21
-var traction = 20
-var jump_speed = 430
-var short_hop_speed
-var second_jump_speed = 800
-var next_jump = 0
-var max_air_jumps = 1
-var jumps = 0
-var fast_fall = false
-var landing_frames = 4
+var velocity : Vector2 = Vector2(0,0)
+var run_speed : int = 400
+var dash_speed : int = 480
+var max_air_speed : int = 250
+var fall_speed : int = 40
+var max_fall_speed : int = 900
+var air_accel : int = 21
+var traction : int = 20
+var jump_speed : int = 430
+var short_hop_speed : int
+var second_jump_speed : int = 800
+var next_jump : int = 0
+var max_air_jumps : int = 1
+var jumps : int = 0
+var fast_fall : bool = false
+var landing_frames : int = 4
 #Modifier so Perfect Wavedash isnt obscene
-var perfect_wavedash_modifier = 1.11
-var dash_duration = 16
-var jump_squat_duration = 5
-var air_dodge_speed = 730
+var perfect_wavedash_modifier : float = 1.11
+var dash_duration : int = 16
+var jump_squat_duration : int = 5
+var air_dodge_speed : int = 730
 
 #General Data
 #Number of lag frames that will be added on landing
-var lag_frames = 0
+var lag_frames : int = 0
 #Number of Walljumps
-var wall_jump_counter = 0
+var wall_jump_counter : int = 0
 #Wall Jump Decay Ratio
-var decay_ratio = 1.05 
+var decay_ratio : float = 1.05 
 
 #Enviroment Vars
-var damage = 0
-var timer = 0
-var collision = false
-var last_platform = false
-var buffer_dodge = false
-var regrab = 0
-var down_buffer = 0
+var damage : int = 0
+var timer : int = 0
+var collision : bool = false
+var last_platform : bool = false
+var buffer_dodge : bool = false
+var regrab : int = 0
+var down_buffer : int = 0
 
 #controls
 var keyboard = false

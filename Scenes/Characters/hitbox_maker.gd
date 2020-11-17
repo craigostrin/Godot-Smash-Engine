@@ -1,16 +1,16 @@
 tool
 extends Path2D
 
-export var width = 0
-export var height = 0
-export var damage = 0
-export var angle = 0
-export var base_kb = 0
-export var kb_scaling  = 0
-export var duration = 0
+export var width : int = 0
+export var height : int = 0
+export var damage : int = 0
+export var angle : int = 0
+export var base_kb : int = 0
+export var kb_scaling : int = 0
+export var duration : int = 0
 export (String,'normal', 'electric', 'darkness','fire','ice','slash','grounding') var type
-export var id = 0
-export var hitlag_modifier = 1
+export var id : int = 0
+export var hitlag_modifier :int = 1
 export (String,'Export', 'Reset') var Export_Code setget make_hitbox
 export (String, MULTILINE) var code = ''
 

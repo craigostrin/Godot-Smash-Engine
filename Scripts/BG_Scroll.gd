@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
-export var speed = Vector2(0,0)
-var o = Vector2(0,0)
+export var speed : Vector2 = Vector2(0,0)
+var o : Vector2 = Vector2(0,0)
 
 func _ready():
 	set_process(true)
