@@ -17,7 +17,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	var i = 0
+	#var i = 0
 	for i in range(len(inputs)):
 		if Input.is_action_pressed(inputs[i]):
 			if not modulated[i]:

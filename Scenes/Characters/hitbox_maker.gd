@@ -11,7 +11,7 @@ export var duration = 0
 export (String,'normal', 'electric', 'darkness','fire','ice','slash','grounding') var type
 export var id = 0
 export var hitlag_modifier = 1
-export (String,'Export', 'Reset') var Export_Code setget update
+export (String,'Export', 'Reset') var Export_Code setget make_hitbox
 export (String, MULTILINE) var code = ''
 
 func _ready():
@@ -25,7 +25,7 @@ func _process(delta):
 	# Update game logic here.
 	pass
 
-func update(value):
+func make_hitbox(value):
 	if Engine.is_editor_hint():
 		Export_Code = value
 		

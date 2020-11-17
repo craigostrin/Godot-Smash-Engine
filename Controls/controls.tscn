@@ -28,6 +28,9 @@ margin_top = 110.0
 margin_right = -30.0
 margin_bottom = 110.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="contextual_help" type="Label" parent="Node"]
 margin_left = 70.0
