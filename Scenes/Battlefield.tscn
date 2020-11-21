@@ -45,6 +45,11 @@ position = Vector2( 0, -240 )
 scale = Vector2( 55.2758, 1 )
 shape = SubResource( 2 )
 
+[node name="final_destination_platform" type="Sprite" parent="Floor"]
+position = Vector2( 0, -132.259 )
+scale = Vector2( 2.22997, 1.99029 )
+texture = ExtResource( 7 )
+
 [node name="Type" type="Label" parent="Floor"]
 margin_right = 40.0
 margin_bottom = 14.0
@@ -80,6 +85,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Side Platform" type="Sprite" parent="Platform"]
+position = Vector2( -740.072, -59.6949 )
+scale = Vector2( 2.18706, 2.11552 )
+texture = ExtResource( 2 )
+centered = false
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 modulate = Color( 0.45098, 0.0941176, 0.482353, 1 )
 position = Vector2( -2.60425, 0 )
@@ -99,6 +110,12 @@ input_pickable = true
 collision_layer = 4
 collision_mask = 0
 
+[node name="Top Platforn" type="Sprite" parent="Platform2"]
+position = Vector2( -672.853, -84.215 )
+scale = Vector2( 2.53187, 2.2614 )
+texture = ExtResource( 3 )
+centered = false
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
 modulate = Color( 0.454072, 0.0964966, 0.484375, 1 )
 scale = Vector2( 55.2758, 1 )
@@ -112,6 +129,9 @@ size_flags_stretch_ratio = 1.01
 text = "Platform"
 align = 1
 clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Platform3" type="StaticBody2D" parent="."]
 modulate = Color( 0.45098, 0.0941176, 0.482353, 1 )
@@ -125,6 +145,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Side Platform2" type="Sprite" parent="Platform3"]
+position = Vector2( -636.081, -59.6948 )
+scale = Vector2( 2.18706, 2.11552 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
 position = Vector2( -5.91748, 0 )
 scale = Vector2( 55.2758, 1 )
@@ -135,6 +162,9 @@ one_way_collision = true
 margin_right = 54.0
 margin_bottom = 14.0
 text = "Platform"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2( 1370, 480 )
@@ -198,25 +228,6 @@ shape = SubResource( 6 )
 [node name="Center" type="Node2D" parent="."]
 position = Vector2( 680, 380 )
 
-[node name="Side Platform" type="Sprite" parent="."]
-position = Vector2( 273.097, 330.751 )
-scale = Vector2( 0.453748, 0.423103 )
-texture = ExtResource( 2 )
-centered = false
-
-[node name="Side Platform2" type="Sprite" parent="."]
-position = Vector2( 764.674, 330.751 )
-scale = Vector2( 0.453748, 0.423103 )
-texture = ExtResource( 2 )
-centered = false
-flip_h = true
-
-[node name="Top Platforn" type="Sprite" parent="."]
-position = Vector2( 522.02, 192.188 )
-scale = Vector2( 0.525284, 0.45228 )
-texture = ExtResource( 3 )
-centered = false
-
 [node name="Background" type="ParallaxBackground" parent="."]
 layer = -1
 script = ExtResource( 4 )
@@ -244,8 +255,3 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 1280, 700 )
 region_filter_clip = true
-
-[node name="final_destination_platform" type="Sprite" parent="."]
-position = Vector2( 660, 557.338 )
-scale = Vector2( 1.39373, 1.24393 )
-texture = ExtResource( 7 )
