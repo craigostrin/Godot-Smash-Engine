@@ -1,8 +1,6 @@
 # Godot-Smash-Engine
 Open Source SSB Engine
-This was forked from ValorZard's fork of NyxTheShield's project. ValorZard updated the original 2018 project to Godot 3.2.4
-I mostly forked this to try to learn how to code Smash-esque movement in Godot,
-but maybe I'll take a crack at moving this baby another mile down the road for the next poor soul.
+This was forked from ValorZard's fork of NyxTheShield's project. ValorZard updated the original 2018 project to Godot 3.2.4. I mostly forked this to try to learn how to code Smash-esque movement in Godot, but maybe I'll take a crack at moving this baby another mile down the road for the next poor soul.
 
 Things that work:
 Dashing,
